@@ -3,78 +3,77 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Quiz</title>
-    <link rel="stylesheet" href="css\style.css">
-    <!-- FontAwesome CDN link for Icons-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <!-- start Quiz button -->
-    <div class="start_btn"><button>Start Quiz</button></div>
-    <!-- Info Box -->
-    <div class="info_box">
-        <div class="info-title"><span>Some Rules of this Quiz</span></div>
-        <div class="info-list">
-            <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
-            <div class="info">2. Once you select your answer, it can't be undone.</div>
-            <div class="info">3. You can't select any option once time goes off.</div>
-            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
-            <div class="info">5. You'll get points on the basis of your correct answers.</div>
-        </div>
-        <div class="buttons">
-            <button class="quit">Exit Quiz</button>
-            <button class="restart">Continue</button>
-        </div>
-    </div>
-    <!-- Quiz Box -->
-    <div class="quiz_box">
-        <header>
-            <div class="title">Awesome Quiz Application</div>
-            <div class="timer">
-                <div class="time_left_txt">Time Left</div>
-                <div class="timer_sec">15</div>
-            </div>
-            <div class="time_line"></div>
-        </header>
-        <section>
-            <div class="que_text">
-                <!-- Question from JavaScript -->
-            </div>
-            <div class="option_list">
-                <!-- Inserted options from JavaScript -->
+    <div id="quiz-challenge">
+        <!--head-->
+        <section id="head">
+            <div class="container">
+                <div class="view-high-scores fl">
+                    <a href="#" id="view-high-scores">View high scores</a>
+                </div>
+                <div class="timer fr">
+                    <span>Time: <b id="timer-num">0</b></span>
+                </div>
             </div>
         </section>
-        <!-- footer of Quiz Box -->
-        <footer>
-            <div class="total_que">
-                <!-- Inserted Question Count Number from JavaScript -->
+        <!--quiz-->
+        <section id="quiz">
+            <div class="container">
+                <div class="quiz-start" id="quiz-start">
+                    <h1>Coding Quiz Challenge</h1>
+                    <p>Try to answer the following code-related questions with in the time limit.</p>
+                    <p>Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+                    <button type="button" id="start-quiz">Start Quiz</button>
+                </div>
+                <div class="quiz-question">
+                    <h2 class="quiz-question-title">1. Inside which HTML element do we put the JavaScript?</h2>
+                    <ul>
+                        <li>&lt;script&gt;</li>
+                        <li>&lt;js&gt;</li>
+                        <li>&lt;scripting&gt;</li>
+                        <li>&lt;javascript&gt;</li>
+                    </ul>
+                </div>
+                <div class="quiz-submit" id="quiz-submit">
+                    <h1>All Done!</h1>
+                    <p>Your final score is <b id="score">0</b>.</p>
+                    <p class="fl">Enter initial:</p>
+                    <input type="text" class="fl">
+                    <button type="button" class="fl">Submit</button>
+                    <button type="button" class="fr">One more time!</button>
+                </div>
             </div>
-            <button class="next_btn">Next Que</button>
-        </footer>
-    </div>
-    <!-- Result Box -->
-    <div class="result_box">
-        <div class="icon">
-            <i class="fas fa-crown"></i>
-        </div>
-        <div class="complete_text">You've completed the Quiz!</div>
-        <div class="score_text">
-            <!-- Inserted Score Result from JavaScript -->
-        </div>
-        <div class="buttons">
-            <button class="restart">Replay Quiz</button>
-            <button class="quit">Quit Quiz</button>
-        </div>
+        </section>
+        <!--result-->
+        <section id="result">
+            <div class="container">
+                <i id="correct">Correct!</i>
+                <i id="wrong">Wrong!</i>
+            </div>
+        </section>
     </div>
 
-    <script src="js/questions.js"></script>
 
-    <script src="js/script.js"></script>
+    <div id="high-scores">
+        <div class="container">
+            <div class="high-scores">
+                <h2>High scores</h2>
+                <ul id="high-score-list">
+                    <!-- <li>asdfasdf</li> -->
+                </ul>
+                <button type="button" class="go-back">Go back</button>
+                <button type="button" class="clear">Clear high scores</button>
+            </div>
+        </div>
+    </div>
 
-
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
